@@ -26,7 +26,7 @@ import jakarta.servlet.http.HttpServlet; => http프로토콜 서비스를 지원
 
 */
 
-//ㅇㅇ
+
 
 // controller의 역할: request에 따른 어떤 service를 호출하지 제어하며 어떻게 응답할지 제어하는 역할
 
