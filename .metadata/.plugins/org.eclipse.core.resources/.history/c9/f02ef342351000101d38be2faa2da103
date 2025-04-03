@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  
+  
+ 
+ <!-- web.xml? DD(배포 서술자)
+ 	  Server가 켜지자마자 프로그램 파일 중에서 제일 처음 읽는 문서 (자바에서 main) 	    
+ -->
+  
+  
+  <display-name>ServeltProject</display-name>
+
+  <welcome-file-list> <!-- 메인페이지로 사용할 파일명 목록. 다음 중 하나가 있으면 웹의 메인 페이지로 삼을 것
+  이는 webapp폴더 내에서 찾게 됨 
+  webapp폴더에 아래 6가지 이름중의 한 파일의 이름이 생성되어 있어야만 오류(404 not found)가 안 남. -->
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+<!-- 특정 클래스를 servlet으로 등록하고 이름을 지정하는 태그   -->
+<servlt>
+	<servlet-name>ex1</servlet-name>
+	<!-- 등록할 서블릿을 지칭할 명칭 -->
+	<servlet-class>edu.kh.servlet.controller.ExampleController1</servlet-class>
+	<!-- 서블릿으로 등록할 클래스의 패키지명.클래스명이라는 풀네임을 이 태그의 내용으로 적음
+	+ name으로 이름을 ex1으로 줄임
+	 -->
+</servlt>
