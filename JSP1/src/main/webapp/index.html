@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSP 기초</title>
+
+</head>
+
+<body>
+  <h1>보조용: EL /  JSTL</h1>
+  <!-- 페이지를 그냥 이동하는 요청은 get요청 
+  -->
+
+  <!-- 1) 클라이언트는 for 태그에서 get post를 해서 서버로 요청한다. 
+ 
+       2) a태그 (get요청만 가능)
+
+
+       아래 둘은 아직 안 배움
+
+       3) JS에서 요청하기: location.href = "주소" (이것도 물론 GET방식만)
+
+       4) Js- Ajax 비동기요청  (GET POST PUT DELETE)
+
+  -->
+
+  <a href="/el_jstl">EL / JSTL 사용해보기</a>
+  <!-- get방식을 통해 사용자는 /el/jstl로 보낼 것
+  서버는 해당 요청을 받아 줄 서버를 만들어놓으면 됨 -->
+
+
+
+  <hr><br><hr><br>
+  
+  
+  <h1>회원가입</h1>
+  
+  <form action= "/signUp" method="post">
+    <p>아이디</p>
+    <input type="text" name="inputId"> <br><hr>
+
+    <p>비밀번호</p>
+    <input type="password" name="inputPw"> <br><hr>
+
+    <p>비밀번호 확인</p>
+    <input type="password" name="inputPwCheck"> <br><hr>
+
+    <p>이름</p>
+    <input type="text" name="inputName"> <br><hr>
+
+    <p>나이</p>
+    <input type="number" name="inputAge"> <br><hr>
+
+    <button type="submit">회원 가입</button>
+
+  </form>
+  
+  
+
+
+</body>
+
+</html>
