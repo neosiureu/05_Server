@@ -41,9 +41,13 @@
 	
 	
 	<h5>page - num1: ${pageScope.num1} </h5>
-	<h5>request - num2: ${requestScope.num1} </h5>
-	<h5>session - num1: ${sessionScope.num1} </h5>
-	<h5>application - num1: ${applicationScope.num1} </h5>
+	<h5>request - num2: ${requestScope.num2} </h5>
+	<h5>session - num3: ${sessionScope.num3} </h5>
+	<h5>application - num4: ${applicationScope.num4} </h5>
+
+
+	<hr>
+
 
 	<h3>2. 변수의 제거 (==속성을 제거)- c:remove 태그</h3>
 	<pre>
@@ -116,11 +120,7 @@
 	
 	</pre>
 	
-
-	
-	
-	
-	<c:set var="test3" value="금요일"/>
+	<c:set var="test3" value="dd"/>
 	쌍따옴표 내에 쌍따옴표를 쓸 수는 없다. 반드시 바깥부분을 홑따옴표로 바꿔야 한다
 	
 	<c:if test='${test3== "금요일" }'> 
@@ -132,8 +132,6 @@
 		<c:if test='${test3!= "금요일" }'> 
 		<h4> ${test3} 너무싫다! </h4> 
 	</c:if>
-	
-
 
 	<hr><br>
 	
@@ -145,11 +143,10 @@
 		- 내부에 조건문 태그를 작성하겠다고 알리는 태그
 		-> 내부에는 오직 태그로서 c:when, c:otherwise태그만 작성 가능
 		
+		
 		* 주의사항 *
 		c:when c:otherwise태그, 공백, jsp용주석을 제외한 모든 것은 에러
-		
-		
-		
+				
 		[c:when 태그]
 		- if(조건식) / else if(조건식)를 나타내는 태그
 		-> 이 역시 if의 일종이므로 속성으로 test를 쓸 수 있다 

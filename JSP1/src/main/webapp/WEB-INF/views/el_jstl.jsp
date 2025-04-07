@@ -95,7 +95,7 @@ JSP 표현식을 좀 더 간단하고 효율적으로 작성할 수 있도록 �
 
 <% 
 
-   int age = Integer.parseInt(request.getParameter("age"));
+   int age = Integer.parseInt(request.getParameter("inputAge"));
 
    if(age>20){
 

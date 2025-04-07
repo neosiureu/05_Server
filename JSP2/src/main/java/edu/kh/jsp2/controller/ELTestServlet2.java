@@ -39,8 +39,6 @@ public class ELTestServlet2 extends HttpServlet {
 		
 		
 		System.out.println(req.getAttribute("requestValue"));
-		
-		
 		// 객체를 html에서 얻어와서 getParameter를 해봤지만 set은 처음 해봄
 		
 		
@@ -48,13 +46,15 @@ public class ELTestServlet2 extends HttpServlet {
 		
 		/* c) session scope => 클라이언트가 서버에 첫 요청했을 때 서버쪽에 생성되는 객체. (index.html 메인 페이지 보여달라고 할 당시에)
 		 클라이언트가 브라우저를 종료하거나 지정된 세션 만료 시간이 지나면 사라진다
-		 위 둘이 아니면 모든 페이지에서 지속적으로 유지된다.
-		*/
+		 위 둘이 아니면 모든 페이지에서 지속적으로 유지된다.*/
+		
 		
 		// c-1) session scope: 세션스코프 객체는 자기보다 작은 범위인 page 또는 request에서 뽑아낼 수 있다.
 		HttpSession session =  req.getSession();
 		// c-2) session scope에 값을 세팅한다
 		session.setAttribute("sessionValue", "session scope객체에 세팅한 값");
+		
+		
 		
 		
 		/* d) application scope 
@@ -65,12 +65,11 @@ public class ELTestServlet2 extends HttpServlet {
 		
 		// d-1) application scope 객체 얻어오기
 		// requset session page 모두 가능
-		
 		 ServletContext applicaiton = req.getServletContext(); // ServeltContext가 어플리케이션 범위 객체랑 사실 똑같은거임
 		
 		 
 		 
-		 // d-2) 값 세팅
+		// d-2) 값 세팅
 		 
 		 applicaiton.setAttribute("applicationValue", "application scope객체에 세팅한 값");
 		 

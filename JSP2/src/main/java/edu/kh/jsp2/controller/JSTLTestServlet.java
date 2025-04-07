@@ -38,6 +38,7 @@ public class JSTLTestServlet extends HttpServlet {
 		req.setAttribute("nameList", nameList);
 		
 		req.getRequestDispatcher("/WEB-INF/views/jstl/test.jsp").forward(req, resp);
+		// 5단계: 경로 설정, 6단계: getRequestDispathce, 7단계: forward
 		
 		
 		

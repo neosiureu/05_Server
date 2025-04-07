@@ -16,7 +16,6 @@ public class ELTestCheck extends HttpServlet {
 		System.out.println(req.getAttribute("requestValue"));
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/el/check.jsp");
 		dispatcher.forward(req, resp);
-		
 	}
 
 }

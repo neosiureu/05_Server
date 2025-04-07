@@ -10,7 +10,6 @@
 
 
 <h1>Servlet/JSP 범위별 내장 객체</h1>
-	
 	<pre>
 		Servlet/JSP 에는 4종류 범위를 나타낸 내장 객체가 존재한다
 		-> 각 종류마다 영향을 끼치는 범위가 달라진다
@@ -117,7 +116,6 @@
 	pageContext.setAttribute("menu", "짬짜면(page)");
 %>	
 	
-
 	<h3>menu: ${menu}</h3>	
 	
 	다만 풀네임을 적으면 원하는 스코프의 세팅된 값을 얻어올 수 있다.
@@ -126,6 +124,6 @@
 	<p>${requestScope.menu}</p>
 	<p>${sessionScope.menu}</p>
 	<p>${applicationScope.menu}</p>
-
+	
 </body>
 </html>
