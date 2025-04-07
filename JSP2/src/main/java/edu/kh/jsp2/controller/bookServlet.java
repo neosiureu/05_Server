@@ -48,10 +48,6 @@ public class bookServlet extends HttpServlet {
 		
 		req.getRequestDispatcher("/WEB-INF/views/book/bookList.jsp").forward(req, resp);
 		
-		
-		
-		
-				
 	}
 
 }
