@@ -13,16 +13,18 @@ import edu.kh.todoList.model.service.TodoListService;
 import edu.kh.todoList.model.service.TodoListServiceImpl;
 
 /**
- * Servlet implementation class DeleteServlet
+ * Servlet implementation class updateSerevlet
  */
-@WebServlet("/todo/delete")
-public class DeleteServlet extends HttpServlet {
-	// 저 주소로 일단 보낸다고 하고 실제로는 메인으로 리다이렉트하자. 
+@WebServlet("/todo/update")
+public class updateSerevlet extends HttpServlet {
+	//수정은 title과 detail부분만 바꾸도록 한다
+
+	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			// 전달받은 파라미터를 얻어오자.
-			
+
 			int todoNo = Integer.parseInt(req.getParameter("todoNo"));
 			// getParameter의 값은 무조건 문자열이기 떄문
 			
@@ -30,14 +32,14 @@ public class DeleteServlet extends HttpServlet {
 			
 			// 할일여부를 변경하는 서비스 호출 후 결과를 반환
 			
-			int result = service.todoDelete(todoNo);
+			int result = service.todoUpadte(todoNo);
 			
 			// 리다이렉트를 위한 세션 스코프 객체
 			HttpSession session = req.getSession();
 			
 			
 			if(result>0) {
-				session.setAttribute("message", "해당 todo의 삭제가 완료되었습니다.");
+				session.setAttribute("message", "해당 todo의 변경이 완료되었습니다.");
 				resp.sendRedirect("/"); 
 				return;
 			}
@@ -47,7 +49,7 @@ public class DeleteServlet extends HttpServlet {
 				// db에 전달인자로 전달한 todo 자체가 없다는 이야기
 				// alert로 경고할 내용은 "그런 todo가 없다" 띄우고 돌아가야
 				
-				session.setAttribute("message", "todo를 삭제할 수 없다");
+				session.setAttribute("message", "todo를 변경할 수 없다");
 				resp.sendRedirect("/"); 
 				// 여기로 리다이렉트하면 main.jsp를 통해 만들어지게 됨		
 			}
@@ -55,8 +57,9 @@ public class DeleteServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	
 		
 	}
-
-
+	
+	
 }

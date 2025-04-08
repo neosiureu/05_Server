@@ -51,3 +51,12 @@ goToList.addEventListener("click", () => {
   deleteBtn.addEventListener("click",()=>{
     location.href="/todo/delete?todoNo="+ todoNo;
   })
+
+
+  const updateBtn = document.querySelector('#updateBtn');
+
+  deleteBtn.addEventListener("click",()=>{
+    let newTitle = prompt('새로운 제목을 입력하세요');
+    let newDetail = prompt('새로운 디테일을 입력하세요');
+    location.href="/todo/update?todoNo="+ todoNo;
+  })

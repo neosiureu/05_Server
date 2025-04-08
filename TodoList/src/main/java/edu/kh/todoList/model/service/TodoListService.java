@@ -52,6 +52,9 @@ public interface TodoListService  {
 
 
 	int todoDelete(int todoNo) throws Exception;
+
+
+	int todoUpadte(int todoNo) throws Exception;
 	
 	
 

@@ -130,4 +130,12 @@ public class TodoListServiceImpl implements TodoListService {
 	}
 
 
+
+	@Override
+	public int todoUpadte(int todoNo) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
 }
