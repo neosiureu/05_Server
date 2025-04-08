@@ -1,8 +1,10 @@
 package edu.kh.todoList.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
+import edu.kh.todoList.model.dto.Todo;
 import edu.kh.todoList.model.service.TodoListService;
 import edu.kh.todoList.model.service.TodoListServiceImpl;
 import jakarta.servlet.ServletException;
@@ -26,8 +28,7 @@ public class MainServlet extends HttpServlet {
 		// 요청이 오면 Controller 가 받고 => service => DAO => DB => DAO => service => Controller => view를 결정하여 567단계로 forward (어떻게 응답할래?)	
 		
 		
-		
-		
+		try {
 		
 		// 1)같은 패키지 service를 호출한다.
 		TodoListService service = new TodoListServiceImpl();
@@ -37,11 +38,26 @@ public class MainServlet extends HttpServlet {
 		
 		Map<String, Object> map = service.todoListFullView() ; 
 		
+		// 맵에 저장된 각 값들, 즉 리스트와 해당하는 int를 풀어서 request 스코프 객체에 실어서 forwading할 것
+		
+		List<Todo> todoList =  (List<Todo>) map.get("todoList");
 		
 		
+		int completeCount = (int)map.get("completeCount");
 		
+		req.setAttribute("todoList",todoList);
+		req.setAttribute("completeCount",completeCount);
+		
+		
+		// 마지막으로 메인페이지의 응답을 담당하는 JSP를 만들어 대신 만들어달라고 하는 일
+		String path = "/WEB-INF/views/main.jsp"; //이게 이제부터 메인 페이지다. 이 서블릿은 더이상 할 게 없다.
+		req.getRequestDispatcher(path).forward(req, resp);
+		
+		} 
+		
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
 
 }

@@ -1,0 +1,18 @@
+/* main.js에 있는 테이블의 스타일을 지정한다 */
+
+#todoList{
+  border-collapse: collapse;
+}
+
+
+#todoList td, #todoList th{
+  padding: 5px 8px;
+}
+
+thead th{
+  background-color: skyblue;
+}
+
+tbody > tr:nth-of-type(2n){
+  background-color: #ddd;
+}

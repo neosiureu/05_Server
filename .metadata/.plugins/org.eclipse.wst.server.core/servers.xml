@@ -6,7 +6,10 @@
   <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/jsp1 Server-config" deployDir="wtpwebapps" hostname="localhost" id="jsp1 Server" name="jsp1 Server" runtime-id="Apache Tomcat v10.1" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
     <list key="modules" value0="JSP1::org.eclipse.jst.jee.server:JSP1::jst.web::6.0"/>
   </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/jsp2 server-config" deployDir="wtpwebapps" hostname="localhost" id="jsp2 server" name="jsp2 server" runtime-id="Apache Tomcat v10.1" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/jsp2 server-config" deployDir="wtpwebapps" hostname="localhost" id="jsp2 server" name="jsp2 server" runtime-id="Apache Tomcat v10.1" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="3">
     <list key="modules" value0="JSP2::org.eclipse.jst.jee.server:JSP2::jst.web::6.0"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/todo server-config" deployDir="wtpwebapps" hostname="localhost" id="todo server" name="todo server" runtime-id="Apache Tomcat v10.1" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
+    <list key="modules" value0="TodoList::org.eclipse.jst.jee.server:TodoList::jst.web::6.0"/>
   </server>
 </servers>

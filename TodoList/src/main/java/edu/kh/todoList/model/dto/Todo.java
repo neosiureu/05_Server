@@ -13,6 +13,6 @@ public class Todo {
 	private int todoNo; //번호
 	private String todoTitle; //제목
 	private String todoDetail; //상세내용
-	private boolean todoCompelete; // 완료여부
+	private boolean todoComplete; // 완료여부
 	private String regDate; // 등록일
 }
