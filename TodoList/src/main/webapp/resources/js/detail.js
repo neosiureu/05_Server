@@ -44,9 +44,10 @@ goToList.addEventListener("click", () => {
     location.href = "/todo/complete?todoNo="+ todoNo;
   });
 
+  
 
   const deleteBtn = document.querySelector('#deleteBtn');
 
   deleteBtn.addEventListener("click",()=>{
-    location.href="/todo/deleteServlet";
+    location.href="/todo/delete?todoNo="+ todoNo;
   })

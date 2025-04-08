@@ -16,11 +16,11 @@ import edu.kh.todoList.model.service.TodoListServiceImpl;
 /**
  * Servlet implementation class DeleteServlet
  */
-@WebServlet("/todo/deleteServlet")
+@WebServlet("/todo/delete")
 public class DeleteServlet extends HttpServlet {
 	// 저 주소로 일단 보낸다고 하고 실제로는 메인으로 리다이렉트하자. 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		try {
 			// 전달받은 파라미터를 얻어오자.
 			
