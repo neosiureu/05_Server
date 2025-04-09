@@ -2,17 +2,23 @@ div {
   margin: 10px 0;
 }
 
+
+
 .complete > span {
   font-weight: bold;
 }
+
 
 .green{
   color: green;
 }
 
+
 .red {
   color: red;
 }
+
+
 
 .content {
   border: 2px solid black;
@@ -22,6 +28,7 @@ div {
   /* 내부 내용을 pre태그와 같이 html에 작성된 그대로 출력할 수 있다 */
   white-space: pre-wrap;
 }
+
 
 .btn-container {
   display: flex;

@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 
@@ -10,13 +9,31 @@
 			<head>
 				<meta charset="UTF-8">
 				<title>Todo List</title>
-
 				<%-- css파일 연결(wepapp기준으로 연결)--%>
 					<link rel="stylesheet" href="/resources/css/main.css">
-
 			</head>
 
 			<body>
+
+
+
+				<c:if test="${empty sessionScope.loginMember}"></c:if>
+				<form action="/login" method="post" >
+					아이디:  <input type="text" name="userId"> <br>
+					비밀번호: <input type="password" name="userPw"> <br>
+					 <button>로그인</button>
+				</form>
+								<!-- 로그인만 폼태그 안에 -->
+
+
+				<c:if test="${not empty sessionScope.loginMember}">
+					<p>${sessionScope.loginMember} 님 환영합니다</p>
+				</c:if>
+				<button type="button" id="logout">로그아웃</button>
+
+
+
+
 				<h1>Todo List</h1>
 
 				<h3>전체 Todo개수: ${fn:length(todoList)} 개 /

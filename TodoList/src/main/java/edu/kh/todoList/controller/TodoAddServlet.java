@@ -70,7 +70,4 @@ public class TodoAddServlet extends HttpServlet {
 		
 		
 	}
-	
-	
-
 }

@@ -13,6 +13,10 @@
             </head>
 
             <body>
+
+
+                <h1>${sessionScope.loginMember}</h1>
+
                 <h1>${todo.todoTitle}</h1>
                 <div class="complete">
                     완료여부:
@@ -26,11 +30,7 @@
                     </c:if>
                 </div>
                 <div>작성일: ${todo.regDate}</div>
-                <div class="content">
-                    ${todo.todoDetail}
-                </div>
-
-
+                <div class="content">${todo.todoDetail}</div>
                 <div class="btn-container">
                     <div>
                         <button type="button" id="goToList">목록으로</button>
@@ -55,5 +55,4 @@
 
                 <script src="/resources/js/detail.js"></script>
             </body>
-
             </html>

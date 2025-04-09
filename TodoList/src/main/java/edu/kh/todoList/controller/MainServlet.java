@@ -46,7 +46,7 @@ public class MainServlet extends HttpServlet {
 		int completeCount = (int)map.get("completeCount");
 		
 		req.setAttribute("todoList",todoList);
-		req.setAttribute("completeCount",completeCount);
+		req.setAttribute("completeCount",completeCount); // 다른 JSP에서 이걸 쓸 일이 있겠구나
 		
 		
 		// 마지막으로 메인페이지의 응답을 담당하는 JSP를 만들어 대신 만들어달라고 하는 일

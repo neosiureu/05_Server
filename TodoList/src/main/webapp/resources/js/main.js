@@ -1,3 +1,20 @@
+// 로그아웃 버튼 관련
+
+const logout = document.querySelector("#logout");
+
+logout.addEventListener("click",()=>{
+  location.href = "/logout";
+});
+
+
+
+
+
+
+
+
+
+
 // 제목이 작성되지 않은 경우 form의 제출을 막자. 
 // 다만 상세내용인 textarea말고 title만 신경쓴다
 

@@ -112,6 +112,7 @@ public class TodoListServiceImpl implements TodoListService {
 
 
 
+	
 	@Override
 	public int todoDelete(int todoNo) throws Exception {
 		Connection conn = getConnection();
@@ -132,10 +133,26 @@ public class TodoListServiceImpl implements TodoListService {
 
 
 	@Override
-	public int todoUpadte(int todoNo) throws Exception {
+	public int todoUpdate(String title, String detail, int todoNo) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		Connection conn = getConnection();
+		
+		int result = dao.todoUpdate(conn, todoNo, title, detail);
+		
+		
+		
+		if(result >0 ) {
+			commit(conn);
+		}
+		else {
+			rollback(conn);
+		}
+		
+		return result;
 	}
 
+
+
+	
 
 }

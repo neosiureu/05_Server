@@ -1,6 +1,6 @@
 // 목록으로 버튼 클릭 시 "/"로 이동하겠다. get요청
 
-const goToList= document.querySelector("#goToList");
+const goToList = document.querySelector("#goToList");
 
 // 목록으로 버튼이 클릭된 경우
 goToList.addEventListener("click", () => {
@@ -25,38 +25,58 @@ goToList.addEventListener("click", () => {
 })
 
 
-  const todoNo = new URLSearchParams(location.search).get("todoNo");
-  // const todoNo = new URLSearchParams(location.search).get("todoNo");
+const todoNo = new URLSearchParams(location.search).get("todoNo");
+// const todoNo = new URLSearchParams(location.search).get("todoNo");
 
 
-  // .get("키") => 값
+// .get("키") => 값
 
-  console.log(todoNo);
+console.log(todoNo);
 
 
-  //완료여부 변경
+//완료여부 변경
 
-  const completeBtn = document.querySelector("#completeBtn");
+const completeBtn = document.querySelector("#completeBtn");
 
-  completeBtn.addEventListener("click",() => {
-    // 현재 보고 있는 Todo의 완료 여부를 O라면 X로 , X라면 O로 변경. 즉 GET요청을 보낸다
-    // location.href = `/todo/complete?todoNo= ${todoNo}`;
-    location.href = "/todo/complete?todoNo="+ todoNo;
-  });
+completeBtn.addEventListener("click", () => {
+  // 현재 보고 있는 Todo의 완료 여부를 O라면 X로 , X라면 O로 변경. 즉 GET요청을 보낸다
+  // location.href = `/todo/complete?todoNo= ${todoNo}`;
+  location.href = "/todo/complete?todoNo=" + todoNo;
+});
 
+
+
+const deleteBtn = document.querySelector('#deleteBtn');
+
+deleteBtn.addEventListener("click", () => {
+  // 정말 삭제할 것인지 한번 confirm으로 물어보기
+
+  // confirm도 window가 제공, 확인과 취소 버튼이 존재하여 각각 true false를 반환한다.
+
+
+  if(!confirm('정말 삭제하시겠습니까?')){
+    return;
+  }
+
+  // 확인 버튼 클릭 시 
+  location.href = "/todo/delete?todoNo=" + todoNo; //어떤 인자를 가지고  /todo/delete로 갈지 
+
+  //const todoNo = new URLSearchParams(location.search).get("todoNo")로 얻어왔던 값
+
+})
+
+
+
+
+
+const updateBtn = document.querySelector('#updateBtn');
+
+updateBtn.addEventListener("click", () => {
+  // let newTitle = prompt('새로운 제목을 입력하세요');
+  // let newDetail = prompt('새로운 디테일을 입력하세요');
+
+  // 수정할 때 들어가는 새로운 페이지를 아예 만들기로 한다
+
+  location.href = "/todo/update?todoNo=" + todoNo;
   
-
-  const deleteBtn = document.querySelector('#deleteBtn');
-
-  deleteBtn.addEventListener("click",()=>{
-    location.href="/todo/delete?todoNo="+ todoNo;
-  })
-
-
-  const updateBtn = document.querySelector('#updateBtn');
-
-  deleteBtn.addEventListener("click",()=>{
-    let newTitle = prompt('새로운 제목을 입력하세요');
-    let newDetail = prompt('새로운 디테일을 입력하세요');
-    location.href="/todo/update?todoNo="+ todoNo;
-  })
+})
